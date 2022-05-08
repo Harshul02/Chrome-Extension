@@ -1,4 +1,4 @@
-let myLeads=["www.awesome.com", "www.epiclead.com", "www.greatlearn.com"];
+let myLeads=[];
 const inputEl = document.getElementById("input-el");
 const inputBtn = document.getElementById("input-btn");
 const ulEL = document.getElementById("ul-el");
@@ -6,9 +6,18 @@ const ulEL = document.getElementById("ul-el");
 
 inputBtn.addEventListener("click", function(){
     myLeads.push(inputEl.value);
+    renderLeads();
 })
 
-for(let i=0; i<myLeads.length; i++)
+
+function renderLeads()
 {
-    ulEL.innerHTML += "<li>" + myLeads[i] + "</li>";
+    let listItems="";
+    
+    for(let i=0; i<myLeads.length; i++)
+    {
+        listItems += "<li>" + myLeads[i] + "</li>";
+    }
+
+    ulEL.innerHTML=listItems;
 }
